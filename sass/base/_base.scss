@@ -1,0 +1,52 @@
+
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    /* default fontsize is 16px, so 62.5% of that is 10px. The good part: for users that need bigger text the default font size will be for example 18 px, so our text will be bigger as well */
+    font-size: 62.5%; /* ROOT FONT SIZE || FOR REM || USE html { } TO GET ROOT FONT SIZE || WE DI 10 PX SO WE CAN DIVIDE ALL PX VALUES BY 10, NOT NEEDING TO EXTRA CALCULATE (ex. 16px)*/
+    //difines what 1 rem is
+
+    //1 rem = 10px
+
+    
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px
+    }
+
+    @include respond(tab-land) { //width < 1200?
+        font-size: 56.25%; //1rem = 9px
+    }
+
+    @include respond(tab-port) { //width < 900?
+        font-size: 50%; //1rem = 8px, 8/16 = 50%
+    }
+}
+
+body {
+    box-sizing: border-box;
+
+    padding: 3rem; /* Padding around the whole webpage (like a border) */
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background: $color-primary; /* WebKit/Blink Browsers */
+    color: $color-grey-light-1;
+  }
+  ::-moz-selection {
+    background: $color-primary; /* Gecko Browsers */
+    color: $color-grey-light-1;
+  }

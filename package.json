@@ -1,0 +1,14 @@
+{
+  "name": "natours-project",
+  "version": "1.0.0",
+  "description": "Landing page for natours simulation",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css -w"
+  },
+  "author": "Carlos",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}
